@@ -1,0 +1,30 @@
+{
+  "name": "interview-scheduler-api",
+  "version": "1.0.0",
+  "description": "Interview Scheduler Application Backend",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/local-auth": "^2.1.0",
+    "bcrypt": "^5.1.0",
+    "chalk": "^5.2.0",
+    "config": "^3.3.9",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "googleapis": "^105.0.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "mongodb": "^5.5.0",
+    "node-mailjet": "^6.0.2",
+    "nodemailer": "^6.9.2",
+    "nodemon": "^2.0.22",
+    "uuid": "^9.0.0"
+  }
+}

@@ -1,0 +1,55 @@
+
+<div class=" mx-auto bg-white shadow-md rounded-md profile-card">
+  <div class="grid grid-cols-10 gap-4 bg-white profile-form" >
+    <div class="col-span-5 ">
+      <div class="max-w-md mx-auto bg-white shadow-2xl rounded-md mt-28 p-6 mr-11 mb-14">
+        <div class="text-2xl font-bold mb-4">Personal Information</div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Name</label>
+          <input class="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-100" type="text" id="name" placeholder="Enter your name" [(ngModel)]="name" >
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+          <input class="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-100" type="email" id="email" placeholder="Enter your email" [(ngModel)]="email"  readonly>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="dob">DOB</label>
+          <input class="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-100" type="text" id="dob" placeholder="Enter your DOB" [(ngModel)]="dob">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">Phone</label>
+          <input class="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-100" type="tel" id="phone" placeholder="Enter your phone" [(ngModel)]="phone" >
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="gender">Gender</label>
+          <input class="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-100" type="text" id="gender" placeholder="Enter your phone" [(ngModel)]="gender" >
+        </div>
+      </div>
+    </div>
+    <div class="col-span-5">
+      <div class="max-w-md mx-auto bg-white shadow-2xl rounded-md mt-28 p-6 ml-11 mb-14 profile-form">
+        <div class="text-2xl font-bold mb-4">Professional Information</div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="company">Currently Working</label>
+          <input class="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-100" type="text" id="company" placeholder="Enter your company" [(ngModel)]="company" >
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="experience">Experience (Years)</label>
+          <input class="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-100" type="number" id="experience" placeholder="Enter your experience" [(ngModel)]="experience" >
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="ctc">Current CTC</label>
+          <input class="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-100" type="text" id="ctc" placeholder="Enter your CTC" [(ngModel)]="ctc" >
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="resume">Link to Resume</label>
+          <input class="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-100" type="text" id="resume" placeholder="Enter your resume" [(ngModel)]="resumeLink" >
+        </div>
+        <div class="mb-4 flex justify-end">
+          <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg  text-md px-7 py-2.5 text-center mr-2 mb-2 mt-6 ">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  

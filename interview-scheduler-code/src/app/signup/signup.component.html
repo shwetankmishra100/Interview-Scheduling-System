@@ -1,0 +1,146 @@
+<div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
+
+<div class="signup-form">
+    <form class="form " (ngSubmit)="signup()">
+        <h2>Sign up for Interview Scheduling</h2>
+        <div class="grid grid-cols-10  gap-x-4"[ngClass]="{'gap-y-4': this.error.nameError==='' && this.error.emailError==='' 
+        && this.error.dobError==='' &&  this.error.phoneError==='' && this.error.matchPasswordError===''
+        &&this.error.genderError==='' && this.error.typeError===''}" >
+            <div class="form-group col-span-5">
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Enter your name" [(ngModel)]="name"
+                    [ngModelOptions]="{standalone: true}">
+                <div *ngIf="this.error.nameError!==''">
+                    <span class="error-text text-xs">{{ this.error.nameError }}</span>
+                </div>
+            </div>
+            <div class=" radio-group col-span-5">
+                <label>Gender</label>
+                <table class="radio-table">
+                    <tr>
+                        <td><input type="radio" id="male" name="male" value="MALE" [(ngModel)]="gender"
+                                [ngModelOptions]="{standalone: true}">
+                        </td>
+                        <td><label for="male">Male</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" id="female" name="female" value="FEMALE" [(ngModel)]="gender"
+                                [ngModelOptions]="{standalone: true}">
+                        </td>
+                        <td> <label for="female">Female</label>
+                        </td>
+                    </tr>                
+                </table>
+                <div *ngIf="this.error.genderError!==''">
+                    <span class="error-text text-xs">{{ this.error.genderError }}</span>
+                </div>
+            </div>
+            <div class="form-group  col-span-5">
+                <label for="email">Email</label>
+                <input id="email" type="text" placeholder="Enter your email" [(ngModel)]="email"
+                    [ngModelOptions]="{standalone: true}">
+                <div *ngIf="this.error.emailError!==''">
+                    <span class="error-text text-xs">{{ this.error.emailError }}</span>
+                </div>
+            </div>
+            <div class="form-group col-span-5">
+                <label for="dob">DOB</label>
+                <input class="input-field" id="DOB" name="date" type="text" onfocus="(this.type='date')"
+                    onblur="if(!this.value)this.type='text'" placeholder="Enter your DOB" [(ngModel)]="dob"
+                    [ngModelOptions]="{standalone: true}">
+                <div *ngIf="this.error.dobError!==''">
+                    <span class="error-text text-xs">{{ this.error.dobError }}</span>
+                </div>
+            </div>
+
+            <div class="form-group col-span-5">
+                <label for="phone">Phone</label>
+                <input id="phone" type="text" placeholder="Enter your phone" [(ngModel)]="phone"
+                    [ngModelOptions]="{standalone: true}">
+                <div *ngIf="this.error.phoneError!==''">
+                    <span class="error-text text-xs">{{ this.error.phoneError }}</span>
+                </div>
+            </div>
+
+            <div class="form-group col-span-5">
+                <label for="company">Currently Working</label>
+                <input id="company" type="text" placeholder="Enter your company" [(ngModel)]="company"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+
+            <div class="form-group col-span-5">
+                <label for="experience">Experience (Year)</label>
+                <input id="experience" type="text" placeholder="Enter your experience" [(ngModel)]="experience"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+
+            <div class="form-group col-span-5">
+                <label for="ctc">Current CTC</label>
+                <input id="ctc" type="text" placeholder="Enter your CTC" [(ngModel)]="ctc"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+
+            <div class="form-group col-span-5">
+                <label for="resume">Link to Resume</label>
+                <input id="resume" type="text" placeholder="Enter your resume" [(ngModel)]="resumeLink"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+
+            <div class="form-group col-span-5">
+                <label for="password">Create Password</label>
+                <input id="password" type="password" placeholder="Enter your password" [(ngModel)]="password"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+
+            <div class=" radio-group col-span-5">
+                <label>Type</label>
+                <table class="radio-table">
+                    <tr>
+                        <td><input type="radio" id="user" name="user-type" value="USER" [(ngModel)]="userType"
+                                 [ngModelOptions]="{standalone: true}">
+                        </td>
+                        <td><label for="user">User</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" id="company" name="user-type" value="COMPANY"
+                                [(ngModel)]="userType" [ngModelOptions]="{standalone: true}">
+                        </td>
+                        <td> <label for="company">Company</label>
+                        </td>
+                    </tr>
+                </table>
+                <div *ngIf="this.error.typeError!==''">
+                    <span class="error-text text-xs">{{ this.error.typeError }}</span>
+                </div>
+            </div>
+
+            <div class="form-group col-span-5">
+                <label for="confirm-password">Confirm Password</label>
+                <input id="confirm-password" type="password" placeholder="Enter your confirm password"
+                    [(ngModel)]="confirmPassword" [ngModelOptions]="{standalone: true}">
+                <div *ngIf="this.error.matchPasswordError!==''">
+                    <span class="error-text text-xs">{{ this.error.matchPasswordError }}</span>
+                </div>
+            </div>
+            <div class=" col-span-3 " style="margin-top: 4rem;">
+                <a class="text-blue-800" routerLink="/login">
+                    Already have an account?
+                </a>
+            </div>
+            <div class="form-actions col-span-7">
+                <button
+                    class="bg-red-500 hover:bg-orange-300 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                    <span class="inline-block mr-2">Login</span>
+                    <svg class="h-4 w-4 inline-block" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M16.707,7.293l-5-5C11.52,2.107,11.271,2,11,2H5C4.447,2,4,2.447,4,3v14c0,0.553,0.447,1,1,1h10c0.553,0,1-0.447,1-1V8C17,7.729,16.893,7.48,16.707,7.293z M10,4.414L12.586,7H10V4.414z M14,16H6V4h3v2h2V4h3V16z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

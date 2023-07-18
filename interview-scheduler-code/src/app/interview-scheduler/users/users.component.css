@@ -1,0 +1,32 @@
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  
+  th,
+  td {
+    padding: 0.75rem 1rem;
+  }
+  
+  th {
+    text-align: left;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+  }
+
+
+  input[type="text"] {
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  input[type="text"]:focus {
+    outline: none;
+    border-color: #4c51bf;
+    box-shadow: 0 0 0 2px rgba(76, 81, 191, 0.2);
+  }
+  
+  i.fa-search {
+    font-size: 16px;
+  }

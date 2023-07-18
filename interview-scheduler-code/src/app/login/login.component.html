@@ -1,0 +1,49 @@
+
+<!-- <div class=" font-serif" >
+    <form>
+        <div>
+          <label for="username" class="mr-3">Username</label>
+          <input type="text" id="username" name="username" [(ngModel)]="username">
+        </div>
+        <div>
+          <label for="password" class="mr-3">Password</label>
+          <input type="password" id="password" name="password" [(ngModel)]="password">
+        </div>
+        <button type="submit" (click)="login()">Login</button>
+      </form>
+</div> -->
+
+<div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
+<div class="form">
+    <form (ngSubmit)="login()">
+        <h3>Login Here</h3>
+
+        <div *ngIf="this.apiError!==''">
+            <span class="error-text text-xs">{{ this.apiError }}</span>
+        </div>
+    
+        <label for="email">Email</label>
+        <input type="text" placeholder="Email" id="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+        <div *ngIf="this.error.emailError!==''">
+            <span class="error-text text-xs">{{ this.error.emailError }}</span>
+        </div>
+    
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+        <div *ngIf="this.error.passwordError!==''">
+            <span class="error-text text-xs">{{ this.error.passwordError }}</span>
+        </div>
+    
+        <button class="bg-red-500 hover:bg-orange-300 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+        <span class="inline-block mr-2">Login</span>
+        <svg class="h-4 w-4 inline-block" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M16.707,7.293l-5-5C11.52,2.107,11.271,2,11,2H5C4.447,2,4,2.447,4,3v14c0,0.553,0.447,1,1,1h10c0.553,0,1-0.447,1-1V8C17,7.729,16.893,7.48,16.707,7.293z M10,4.414L12.586,7H10V4.414z M14,16H6V4h3v2h2V4h3V16z"></path>
+        </svg>
+        </button>
+        <div> <pre class="flex justify-center">Dont have account?  ||  <a routerLink="/signup" class="text-blue-800">SignUp</a></pre></div>
+    </form>
+</div>
+

@@ -1,0 +1,57 @@
+<div class="p-10 mt-4">
+    <div *ngIf="isUpcomingRoute">
+    <app-view-upcoming-interviews (upcomingInterviewListChange)="receiveUpcomingInterviewList($event)"></app-view-upcoming-interviews>
+    <div class="bg-white shadow-md rounded-lg overflow-hidden mb-5"
+        *ngFor="let interview of upcomingInterviewList | paginate: { itemsPerPage: 4, currentPage: p }">
+        <div class="bg-white shadow-md rounded-md p-4">
+            <div class="flex items-center justify-center">
+            </div>
+            <div class="flex justify-between ">
+                <h3 class="text-lg font-bold ">{{interview.user1Data.email}}</h3>
+                <h3 class="text-lg font-bold  ">{{interview.user2Data.email}}</h3>
+            </div>
+            <div class="flex justify-between">
+              <p class="font-semibold">Interview Schedule From:&nbsp;{{interview.scheduledFrom}}</p>
+              <img src="../assets/image/between.png" alt="Image" class="w-14 h-14 mx-auto" >
+              <p class="font-semibold">Interview Schedule To:&nbsp;{{interview.scheduledTo}}</p>
+            </div>
+            <div class="flex justify-between">
+              <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded" (click)="goToMeetingLink(interview.scheduledMeet)">
+                Join Meet
+              </button>
+              <button *ngIf="type==='COMPANY'" class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded" (click)="deleteInterview(interview.scheduleId)">
+                Delete Interview
+              </button>
+            </div>
+          </div>
+          
+    </div>
+    </div>
+
+
+    <div *ngIf="isPastRoute">
+    <app-view-past-interviews (pastInterviewListChange)="receivePastInterviewList($event)"></app-view-past-interviews>
+    <div class="bg-white shadow-md rounded-lg overflow-hidden mb-5"
+        *ngFor="let interview of pastInterviewList | paginate: { itemsPerPage: 8, currentPage: p }">
+        <div class="bg-white shadow-md rounded-md p-4">
+            <div class="flex items-center justify-center">
+            </div>
+            <div class="flex justify-between ">
+                <h3 class="text-lg font-bold ">{{interview.user1Data.email}}</h3>
+                <h3 class="text-lg font-bold  ">{{interview.user2Data.email}}</h3>
+            </div>
+            <div class="flex justify-between">
+              <p class="font-semibold">Interview Schedule From:&nbsp;{{interview.scheduledFrom}}</p>
+              <img src="../assets/image/between.png" alt="Image" class="w-14 h-14 mx-auto" >
+              <p class="font-semibold">Interview Schedule To:&nbsp;{{interview.scheduledTo}}</p>
+            </div>
+          </div>
+    </div>
+    </div>
+    
+
+    <!-- Add the pagination controls -->
+    <div class="pagination">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>

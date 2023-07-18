@@ -1,0 +1,6 @@
+{
+    "mongo": {
+        // "connectionUrl": "mongodb://localhost:27017/dentira",
+        "connectionUrl": "mongodb+srv://admin:admin000@basecluster.qpkukgi.mongodb.net/PrimaryDB?retryWrites=true&w=majority"
+    }
+}

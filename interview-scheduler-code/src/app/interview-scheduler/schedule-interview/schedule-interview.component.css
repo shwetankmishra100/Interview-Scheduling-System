@@ -1,0 +1,129 @@
+/* *,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} */
+.background{
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+.background .shape{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+.shape:first-child{
+    background: linear-gradient(
+        #1845ad,
+        #23a2f6
+    );
+    left: 50px;
+    top: -130px;
+}
+.shape:last-child{
+    background: linear-gradient(
+        to right,
+        #ff512f,
+        #f09819
+    );
+    right: -230px;
+    bottom: -150px;
+}
+.f
+form *{
+    font-family: 'Poppins',sans-serif;
+    letter-spacing: 0.5px;
+    outline: none;
+}
+form h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+img{
+    width: 200px;
+    height: 200px;
+}
+input,select{
+    display: block;
+    height: 30px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.151);
+    border-color: rgb(252, 252, 252);
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+::placeholder{
+    color: #555555;
+}
+.button{
+    margin-top: 50px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.151);;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button:hover{
+    margin-top: 50px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.151);;
+    border: #080710 1px solid;
+    box-shadow: black 1px 2px ;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.borderq{
+    padding: 2rem 6rem;
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 0px );
+    -webkit-backdrop-filter: blur( 0px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.error-text{
+    color: red;
+}
+.form-box{
+    margin:2% auto;
+    height: fit-content;
+}
+
+.details-card{margin-left: 10px;
+    position: relative;
+    width: 27rem;
+    padding-left: 12px;
+    padding-bottom: 10px;
+    height: fit-content;
+    background: rgba( 32, 5, 5, 0.3 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 3.5px );
+    -webkit-backdrop-filter: blur( 3.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}

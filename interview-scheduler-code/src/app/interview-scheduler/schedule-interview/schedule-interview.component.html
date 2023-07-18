@@ -1,0 +1,122 @@
+<div class="p-10 mt-4">
+    <h2 class="text-3xl font-bold mb-5">Schedule Interview</h2>
+    <div class=" form-box">
+        <form (ngSubmit)="scheduleInterview()" >
+
+            <div class="grid grid-cols-12 gap-7 borderq">
+                <div class="col-span-4">
+                    <div>
+                        <label for="date" class="font-bold mb-1">Date:</label>
+                        <input type="date" id="date" name="date" [(ngModel)]="date"
+                            class="w-full border border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:border-blue-500">
+                        <div *ngIf="this.error.dateError!==''">
+                            <span class="error-text text-xs">{{ this.error.dateError }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-4">
+                    <div>
+                        <label for="time" class="font-bold mb-1">Time:</label>
+                        <input type="time" id="time" name="time" [(ngModel)]="time"
+                            class="w-full border border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:border-blue-500">
+                        <div *ngIf="this.error.timeError!==''">
+                            <span class="error-text text-xs">{{ this.error.timeError }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-4">
+                    <div>
+                        <label for="duration" class="font-bold mb-1">Duration:</label>
+                        <select id="duration" name="duration" [(ngModel)]="duration"
+                            class="w-full border border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:border-blue-500">
+                            <option *ngFor="let time of durationOptions" [value]="time">{{time}} minutes</option>
+                        </select>
+                        <div *ngIf="this.error.durationError!==''">
+                            <span class="error-text text-xs">{{ this.error.durationError }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-span-5">
+                    <div>
+                        <label for="user1" class="font-bold mb-1">User 1:</label>
+                        <input type="text" id="user1" name="user1" [(ngModel)]="user1"
+                            (blur)="fetchUser1Details($event)"
+                            class="w-full border border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:border-blue-500">
+                        <div *ngIf="this.error.user1EmailError!==''">
+                            <span class="error-text text-xs">{{ this.error.user1EmailError }}</span>
+                        </div>
+                        <div *ngIf="this.showUser1===true"
+                            class="max-w-md mx-auto bg-white rounded-md shadow-md p-6 details-card">
+                            <div>
+                                <p class="text-white">Name: {{ name1}}</p>
+                                <p class="text-white">Email: {{ email1 }}</p>
+                                <p class="text-white">Gender: {{ gender1 }}</p>
+                                <p class="text-white">DOB: {{ dob1 }}</p>
+                                <p class="text-white">Phone: {{ phoneNumber1 }}</p>
+                                <p class="text-white">Company: {{ currentCompany1 }}</p>
+                                <p class="text-white">Experience: {{experience1}}</p>
+                                <p class="text-white">CTC: {{ currentCTC1 }}</p>
+                                <p class="text-white">Resume Link: <a href="{{ resumeURL1 }}">{{ resumeURL1 }}</a></p>
+                            </div>
+                        </div>
+                        <div *ngIf="showInviteToggle1===true" class=" flex justify-end details-card">
+                            <p class=" text-white text-lg  mt-5 mr-7 ">This user does not exist, send invitation now.</p>
+                            <button (click)="inviteUser1(user1)" type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg  text-xs px-7 py-2.5 text-center mr-7 mb-2 mt-4 ">Invite</button>
+                          </div>
+                          <div *ngIf="inviteStatus1===false" class=" flex justify-end details-card">
+                            <p class=" text-white text-lg  mt-5 mr-7 ">Invitation sended!..User has not accepted the invite yet.</p>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-span-2">
+                    <div class=" flex justify-center" style="padding-top:60px">
+                        <img src="../assets/image/direction.png" style="width:30px; height:45px;" alt="img">
+                    </div>
+                </div>
+
+                <div class="col-span-5">
+                    <div>
+                        <label for="user2" class="font-bold mb-1">User 2:</label>
+                        <input type="text" id="user1" name="user2" [(ngModel)]="user2"
+                            (blur)="fetchUser2Details($event)"
+                            class="w-full border border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:border-blue-500">
+                        <div *ngIf="this.error.user2EmailError!==''">
+                            <span class="error-text text-xs">{{ this.error.user2EmailError }}</span>
+                        </div>
+                        <div *ngIf="this.showUser2===true"
+                            class="max-w-md mx-auto bg-white rounded-md shadow-md p-6 details-card">
+                            <div>
+                                <p class="text-white">Name: {{ name2}}</p>
+                                <p class="text-white">Email: {{ email2 }}</p>
+                                <p class="text-white">Gender: {{ gender2 }}</p>
+                                <p class="text-white">DOB: {{ dob2 }}</p>
+                                <p class="text-white">Phone: {{ phoneNumber2 }}</p>
+                                <p class="text-white">Company: {{ currentCompany2 }}</p>
+                                <p class="text-white">Experience: {{experience2}}</p>
+                                <p class="text-white">CTC: {{ currentCTC2 }}</p>
+                                <p class="text-white">Resume Link: <a href="{{ resumeURL2 }}">{{ resumeURL2 }}</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div *ngIf="showInviteToggle2===true" class=" flex justify-end details-card">
+                            <p class=" text-white text-lg  mt-5 mr-7 ">This user does not exist, send invitation now.</p>
+                            <button (click)="inviteUser2(user2)" type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg  text-xs px-7 py-2.5 text-center mr-7 mb-2 mt-4 ">Invite</button>
+                        </div>
+                        <div *ngIf="inviteStatus2===false" class=" flex justify-end details-card">
+                            <p class=" text-white text-lg  mt-5 mr-7 ">Invitation sended!..User has not accepted the invite yet.</p>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-12 flex justify-center">
+                    <button type="submit"
+                        class=" button bg-blue-500 text-white rounded-lg py-2 px-4 hover:bg-blue-600 transition-colors duration-200">Schedule
+                        Interview</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="absolute top-0 right-0 z-50 logo">
+    <img src="../assets/image/Oncehub.png" alt="logo.png">
+</div>
+<div class="flex flex-wrap h-screen">
+  <!-- Navigation sidebar -->
+  <nav class="bg-gray-900 text-gray-500 w-64  flex flex-col z-20">
+    <div class="flex items-center h-20 px-6">
+<!-- If want some header in side nav -->
+    </div>
+    <ul class="flex-grow px-4 py-2 overflow-y-auto">
+        <div class="nav-top-button">
+              <li class="my-4">
+                <a  class="flex items-center"  (click)="viewUpcomingInterview()">
+                  <i class="fas fa-users text-gray-400 mr-3"></i>
+                  <span class="text-gray-400">View Upcoming Interviews</span>
+                </a>
+              </li>
+              <li class="my-4">
+                <a  class="flex items-center" (click)="viewPastInterview()">
+                  <i class="fas fa-file-alt text-gray-400 mr-3"></i>
+                  <span class="text-gray-400">View Past Interviews</span>
+                </a>
+              </li>
+        </div>
+
+      <div class="nav-top-button" *ngIf="type!=='USER'">
+        <li class="my-4">
+            <a  class="flex items-center" (click)="scheduleInterview()">
+              <i class="fas fa-home text-gray-400 mr-3"></i>
+              <span class="text-gray-400">Schedule Interview</span>
+            </a>
+          </li>
+          <li class="my-4">
+            <a  class="flex items-center" (click)="listUsers()">
+              <i class="fas fa-file-alt text-gray-400 mr-3"></i>
+              <span class="text-gray-400">Find Users</span>
+            </a>
+          </li>
+      </div>
+     
+      <div class="nav-botton-button">
+        <li class="my-4 ">
+            <a  class="flex items-center" (click)="showProfile()">
+              <i class="fas fa-cog text-gray-400 mr-3"></i>
+              <span class="text-gray-400">Profile</span>
+            </a>
+          </li>
+          <li class="my-4 ">
+            <a class="flex items-center  cursor-pointer" (click)="logout()">
+              <i class="fas fa-cog text-gray-400 mr-3"></i>
+              <span class="text-gray-400" >Logout</span>
+            </a>
+          </li>
+      </div>
+    </ul>
+  </nav>
+  <!-- Upcoming interviews section -->
+    <div class="flex-grow ">
+        <router-outlet></router-outlet>
+    </div>
+</div>
